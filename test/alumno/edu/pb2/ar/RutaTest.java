@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 import org.junit.Test;
 
-public class VueloTest {
+public class RutaTest {
     @Test	
     public void QueSePuedaCrearUnaRuta() {
 	
