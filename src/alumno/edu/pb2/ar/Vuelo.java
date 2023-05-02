@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Vuelo {
 	private Integer numeroDeVuelo;
 	private LocalDate fechaDeVuelo;
-	private Ruta rutaDelVuelo;
+	private Integer pasajeros;
 	//tengo que crear una lista de rutas
 	private ArrayList<Ruta> rutas;
 
@@ -16,8 +16,7 @@ public class Vuelo {
 	public Vuelo(Ruta rutaDelVuelo, Integer numeroDeVuelo, LocalDate fechaDelVuelo) {
 		this.numeroDeVuelo=numeroDeVuelo;
 		this.fechaDeVuelo=fechaDelVuelo;
-		this.rutaDelVuelo=rutaDelVuelo;
-	    rutas=new ArrayList<>();
+		rutas=new ArrayList<>();
 		
 	}
 
@@ -26,8 +25,8 @@ public class Vuelo {
 	Boolean sePudo=false;
 	
 	for(Ruta ruta: rutas) {
-		if(ruta.getTV().equals(tiempoDeVuelo)) {
-		  ruta.setTV(nuevoTiempoDeVuelo);
+		if(ruta.getTiempoDeVuelo().equals(tiempoDeVuelo)) {
+		  ruta.setTiempoDeVuelo(nuevoTiempoDeVuelo);
 		  sePudo=true;
 			
 		}
@@ -81,15 +80,6 @@ public  Boolean modificarTiempoDeVueloDeMiRuta(Double nuevoTiempoDeVuelo) {
 
 
 
-	public Ruta getRutaDelVuelo() {
-		return rutaDelVuelo;
-	}
-
-
-
-	public void setRutaDelVuelo(Ruta rutaDelVuelo) {
-		this.rutaDelVuelo = rutaDelVuelo;
-	}
 
 
 

@@ -7,17 +7,17 @@ public class Ruta {
 	private String destino;
 	private String origen;
 	private Integer id;
-	private Double tV;
-	private ArrayList<Ruta> rutas;
-
+	private Double tiempoDeVuelo;
 	
 
-	public Ruta(String destino, String origen, Integer id, Double tV) {
+	
+//constructor
+	public Ruta(String destino, String origen, Integer id, Double tiempoDeVuelo) {
 		this.destino=destino;
 		this.origen=origen;
 		this.id=id;
-		this.tV=tV;
-		rutas =new ArrayList<>();
+		this.tiempoDeVuelo=tiempoDeVuelo;
+		
 
 		
 	}
@@ -49,12 +49,12 @@ public class Ruta {
 		this.id = id;
 	}
 
-	public Double getTV() {
-		return tV;
+	public Double getTiempoDeVuelo() {
+		return tiempoDeVuelo;
 	}
 
-	public void setTV(Double tV) {
-		this.tV = tV;
+	public void setTiempoDeVuelo(Double tiempoDeVuelo) {
+		this.tiempoDeVuelo = tiempoDeVuelo;
 	}
 
 }
