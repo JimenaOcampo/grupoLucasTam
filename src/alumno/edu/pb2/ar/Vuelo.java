@@ -6,54 +6,72 @@ import java.util.ArrayList;
 public class Vuelo {
 	private Integer numeroDeVuelo;
 	private LocalDate fechaDeVuelo;
-	private Ruta rutaDelVuelo;
 	//tengo que crear una lista de rutas
-	private ArrayList<Ruta> rutas;
-
-
+	private ArrayList<Ruta> listaRutas;
 	
-
-	public Vuelo(Ruta rutaDelVuelo, Integer numeroDeVuelo, LocalDate fechaDelVuelo) {
+	public Vuelo(Ruta nuevaRuta, Integer numeroDeVuelo, LocalDate fechaDelVuelo) {
 		this.numeroDeVuelo=numeroDeVuelo;
 		this.fechaDeVuelo=fechaDelVuelo;
-		this.rutaDelVuelo=rutaDelVuelo;
-	    rutas=new ArrayList<>();
+		listaRutas=new ArrayList<>();
 		
 	}
-
-		public  Boolean modificarTiempoDeVueloDeMiRuta(Double nuevoTiempoDeVuelo,Double tiempoDeVuelo) {
-	//arranco diciendo que no se pudo
-	Boolean sePudo=false;
 	
-	for(Ruta ruta: rutas) {
-		if(ruta.getTV().equals(tiempoDeVuelo)) {
-		  ruta.setTV(nuevoTiempoDeVuelo);
-		  sePudo=true;
+	
+public Vuelo() {
+
+	
+	}
+
+
+	//	--------------------------------------
+	public Boolean registrarRuta(Ruta nuevaRuta) {
+	return this.listaRutas.add(nuevaRuta);
+	
+	}
+	
+	public Integer obtenerCantidadDeRutas() {
+	return this.listaRutas.size();
+	}
+	
+    public Boolean buscarRutasPorId(Integer id) {
+		Boolean respuesta=false;
+		// este for se usa para recorrer un arraylist....
+		
+       		//objeto    // nombre    //list
+		for(Ruta misRutas : listaRutas) {
+	    	  
 			
+			if(misRutas.getId().equals(id)) {
+	    		  respuesta=true;
+	      }
 		}
-	}
+		return respuesta;
+ }
 	
+ //---------------------------------------------  
+    
+    
+    
+    
 	
-	return sePudo;
-}
-/*
-public  Boolean modificarTiempoDeVueloDeMiRuta(Double nuevoTiempoDeVuelo) {
-	//arranco diciendo que no se pudo
-	Boolean sePudo=false;
-	
-		if(getTV()!=nuevoTiempoDeVuelo) {
-			setTV(nuevoTiempoDeVuelo);
-			sePudo=true;
-			
-		
-	}
-	return sePudo;
-}
-*/
 
+public  Boolean modificarTiempoDeVueloDeMiRuta(Double nuevoTiempoDeVuelo,Integer id, Double tiempoDeVuelo) {
+	//arranco diciendo que no se pudo
+
+	//System.out.println(listaRutas.size()); verifique que no esta vacio
 	
+	 Boolean respuesta = false;
+	 
+	for (Ruta ruta : listaRutas) {
+	if(ruta.getId().equals(id)&&ruta.getTiempoVuelo().equals(tiempoDeVuelo)) 
+		ruta.setTiempoVuelo(nuevoTiempoDeVuelo);
+	respuesta=true;
 	
-	
+	 }	
+	return respuesta;	
+}
+
+
 	
 	
 	
@@ -81,19 +99,7 @@ public  Boolean modificarTiempoDeVueloDeMiRuta(Double nuevoTiempoDeVuelo) {
 
 
 
-	public Ruta getRutaDelVuelo() {
-		return rutaDelVuelo;
-	}
 
-
-
-	public void setRutaDelVuelo(Ruta rutaDelVuelo) {
-		this.rutaDelVuelo = rutaDelVuelo;
-	}
-
-
-
-	
 
 
 	

@@ -7,21 +7,31 @@ public class Ruta {
 	private String destino;
 	private String origen;
 	private Integer id;
-	private Double tV;
-	private ArrayList<Ruta> rutas;
+	private Double tiempoVuelo;
+
 
 	
 
-	public Ruta(String destino, String origen, Integer id, Double tV) {
+	public Ruta(String destino, String origen, Integer id, Double tiempoVuelo) {
 		this.destino=destino;
 		this.origen=origen;
 		this.id=id;
-		this.tV=tV;
-		rutas =new ArrayList<>();
+		this.tiempoVuelo=tiempoVuelo;
+	
+
 
 		
 	}
+	public Ruta() {
+		this.destino=destino;
+		this.origen=origen;
+		this.id=id;
+		this.tiempoVuelo=tiempoVuelo;
+	
 
+
+		
+	}
 
 	
 
@@ -49,12 +59,13 @@ public class Ruta {
 		this.id = id;
 	}
 
-	public Double getTV() {
-		return tV;
+	public Double getTiempoVuelo() {
+		return tiempoVuelo;
 	}
 
-	public void setTV(Double tV) {
-		this.tV = tV;
+	public void setTiempoVuelo(Double tiempoVuelo) {
+		this.tiempoVuelo = tiempoVuelo;
 	}
+
 
 }
