@@ -1,6 +1,8 @@
 package alumno.edu.pb2.ar;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -115,7 +117,60 @@ public class AerolineaTest {
 				
 				assertTrue(sePudoCAmbiarDire);
 	}	
+	@Test
+	public void queSePuedaRegistrarUnaRuta() {
+	
+		//ATRIBUTOS
+				Long id = 1L;
+				String nombreDelAeropuerto="Bariloche";
+				String codigo = "BRC";
+				String direccion = "xxx123";
+				String nuevaDierccion= "xxx125";
+				String nombreAerolinea="AeroJaim";
+				
+				
+			
+		
 
+				// EJECUCION
+				//creo objetos
+				Ruta nuevaRuta=new Ruta("AEP","BRC" ,1,2.3);
+				//Aeropuerto aeropuerto = new Aeropuerto(id, nombreDelAeropuerto, codigo, direccion);
+				Aerolinea AeroJaim = new Aerolinea(nombreAerolinea);
+				
+				AeroJaim.registrarRuta(nuevaRuta);
+				//metodos
+				Integer valorOptenido=AeroJaim.obtenerCantidadDeRutas();
+			
+				//VALIDACION
+				 Integer valorEsperado=1;
+			     assertEquals(valorEsperado,valorOptenido);
+	}	
+	@Test
+	public void queSePuedaAgregarUnaRutaAUnVuelo() {
+	
+		//ATRIBUTOS
+				Long id = 1L;
+				String nombreDelAeropuerto="Bariloche";
+				String codigo = "BRC";
+				String direccion = "xxx123";
+				String nuevaDierccion= "xxx125";
+				String nombreAerolinea="AeroJaim";
+				
+				
+			
+		
+
+				// EJECUCION
+				//creo objetos
+				Ruta nuevaRuta=new Ruta("AEP","BRC" ,1,2.3);
+				//Aeropuerto aeropuerto = new Aeropuerto(id, nombreDelAeropuerto, codigo, direccion);
+				Aerolinea AeroJaim = new Aerolinea(nombreAerolinea);
+				Vuelo Vuelo01=new Vuelo( null, null);
+				AeroJaim.registrarRuta(nuevaRuta);
+				
+				
+	}
 	
 
 }

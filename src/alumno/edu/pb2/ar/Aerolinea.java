@@ -1,5 +1,6 @@
 package alumno.edu.pb2.ar;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 //la aerolinea tiene al aeropuerto y a los vuelo
 public class Aerolinea {
@@ -20,6 +21,7 @@ public class Aerolinea {
 	
 	private ArrayList<Vuelo>vuelos;
 	private ArrayList<Aeropuerto>aeropuertos;
+	private ArrayList<Ruta> rutas;
 	//lo que necesito depende de mi tablita "diagrama de decision" es este caso:
 	//tiene un solo valor, contiene duplicados= arraylist.
 	
@@ -29,6 +31,7 @@ public class Aerolinea {
 		this.nombre=nombre;
 		aeropuertos=new ArrayList<>();
 		vuelos=new ArrayList<>();
+		rutas=new ArrayList<>();
 	}
 
 	
@@ -36,7 +39,7 @@ public class Aerolinea {
 //metodos
 	
 	
-	public Boolean registrarAeropuerto(Aeropuerto aeropuerto) {
+public Boolean registrarAeropuerto(Aeropuerto aeropuerto) {
 		/*El método add nos permite añadir un elemento al final 
 		de la List si no le indicamos una posición o bien nos 
 		permite añadir un elemento en una posición determinada 
@@ -44,13 +47,14 @@ public class Aerolinea {
 	return this.aeropuertos.add(aeropuerto);
 	
 	}
+	
 
-	public Integer obtenerCantidadDeAeropuertos() {
+public Integer obtenerCantidadDeAeropuertos() {
 		/*Devuelve el tamaño, número de elementos, del ArrayList*/
 	return this.aeropuertos.size();
 	}
 
-	public Aeropuerto buscarAeropuertoPorCodigo(String codigo) {
+public Aeropuerto buscarAeropuertoPorCodigo(String codigo) {
 		
 		// este for se usa para recorrer un arraylist....
 		
@@ -64,7 +68,7 @@ public class Aerolinea {
 		return null;
 	}
 	
-	public Aeropuerto buscarAeropuertoPorNombre(String nombre) {
+public Aeropuerto buscarAeropuertoPorNombre(String nombre) {
 		for(Aeropuerto aeropuerto : aeropuertos) {
 	    	  
 			if(aeropuerto.getNombre().equals(nombre))
@@ -74,7 +78,7 @@ public class Aerolinea {
 	}
 
 	
-	public Boolean cambiarDireAeropuerto(String nuevaDierccion, String direccion) {
+public Boolean cambiarDireAeropuerto(String nuevaDierccion, String direccion) {
 		//arranco diciendo que no se pudo
 		Boolean sePudo=false;
 
@@ -90,28 +94,71 @@ public class Aerolinea {
 		return sePudo;
 	}
 
+//habilita regis ruta
+public void registrarRuta(Ruta nuevaRuta) {
+	this.rutas.add(nuevaRuta);
+		
+	}
+
+
+
+public Integer obtenerCantidadDeRutas() {
+		// TODO Auto-generated method stub
+		return rutas.size();
+	}
+public Boolean registrarUnVuelo(String codigoAeropuertoOrigen, String codigoAeropueroDestino,LocalDate fechaDeDespege, Integer idRuta){
+		
+		Aeropuerto origen= buscarAeropuertoPorCodigo(codigoAeropuertoOrigen);
+		Aeropuerto destino= buscarAeropuertoPorCodigo(codigoAeropueroDestino);
+		Ruta ruta= buscarRutaPorId(idRuta);
+		Vuelo vuelo01 =new Vuelo(origen,destino,ruta,fechaDeDespege);
+		this.vuelos.add(vuelo01);
+		//validacion manual-----
+		return null;
+	}
+
+
+
+public Ruta buscarRutaPorId(Integer idRuta) {
+		// TODO Auto-generated method stub
+	for(Ruta ruta :rutas) {
+		if(ruta.getId().equals(idRuta)) {
+			return ruta;
+		}
+	}
+	return null;
+	}
+	
+	
+	
+	
+	
+	
 //get set
-	public String getNombre() {
+public String getNombre() {
 		return nombre;
 	}
 
 
 
-	public void setNombre(String nombre) {
+public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
 
 
-	public ArrayList<Aeropuerto> getAeropuertos() {
+public ArrayList<Aeropuerto> getAeropuertos() {
 		return aeropuertos;
 	}
 
 
 
-	public void setAeropuertos(ArrayList<Aeropuerto> aeropuertos) {
+public void setAeropuertos(ArrayList<Aeropuerto> aeropuertos) {
 		this.aeropuertos = aeropuertos;
 	}
+
+
+
 
 
 
