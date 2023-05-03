@@ -13,23 +13,26 @@ public class Vuelo {
 
 	
 
-	public Vuelo(Ruta rutaDelVuelo, Integer numeroDeVuelo, LocalDate fechaDelVuelo) {
+	public Vuelo(Ruta ruta, Integer numeroDeVuelo, LocalDate fechaDelVuelo) {
 		this.numeroDeVuelo=numeroDeVuelo;
 		this.fechaDeVuelo=fechaDelVuelo;
-		rutas=new ArrayList<>();
+		rutas = new ArrayList<>();
 		
 	}
 
-		public  Boolean modificarTiempoDeVueloDeMiRuta(Double nuevoTiempoDeVuelo,Double tiempoDeVuelo) {
+
+		public Boolean modificarTiempoDeVueloDeMiRuta(Double nuevoTiempoDeVuelo,Integer id) {
 	//arranco diciendo que no se pudo
 	Boolean sePudo=false;
 	
-	for(Ruta ruta: rutas) {
-		if(ruta.getTiempoDeVuelo().equals(tiempoDeVuelo)) {
-		  ruta.setTiempoDeVuelo(nuevoTiempoDeVuelo);
+	for(Ruta ruta : rutas) {
+		
+	
+		if(rutas.contains(id)) {
+		 
 		  sePudo=true;
-			
-		}
+		  }
+		
 	}
 	
 	

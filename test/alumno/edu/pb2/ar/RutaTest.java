@@ -54,7 +54,7 @@ public class RutaTest {
 	
 	//mis metodos
 
-Boolean rutaModificada= vuelo0001.modificarTiempoDeVueloDeMiRuta(nuevoTiempoDeVuelo, tiempoDeVuelo);
+Boolean rutaModificada= vuelo0001.modificarTiempoDeVueloDeMiRuta(nuevoTiempoDeVuelo, id);
 	
 	//Boolean rutaModificada= vuelo0001.modificarTiempoDeVueloDeMiRuta(nuevoTiempoDeVuelo);
 	
