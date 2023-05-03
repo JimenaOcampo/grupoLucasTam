@@ -12,12 +12,16 @@ public class Ruta {
 
 	
 
-	public Ruta(String destino, String origen, Integer id, Double tiempoVuelo) {
+	
+
+	
+//constructor
+	public Ruta(String destino, String origen, Integer id, Double tiempoDeVuelo) {
 		this.destino=destino;
 		this.origen=origen;
 		this.id=id;
-		this.tiempoVuelo=tiempoVuelo;
-	
+		this.tiempoVuelo=tiempoDeVuelo;
+		
 
 
 		
@@ -59,6 +63,7 @@ public class Ruta {
 		this.id = id;
 	}
 
+
 	public Double getTiempoVuelo() {
 		return tiempoVuelo;
 	}
@@ -66,6 +71,6 @@ public class Ruta {
 	public void setTiempoVuelo(Double tiempoVuelo) {
 		this.tiempoVuelo = tiempoVuelo;
 	}
-
+	
 
 }

@@ -79,12 +79,10 @@ public class RutaTest {
 	
 	
 	//mis metodos
+
       Boolean ingresoExitoso= vuelo01.registrarRuta(nuevaRuta);
 	  Boolean rutaModificada= vuelo01.modificarTiempoDeVueloDeMiRuta(nuevoTiempoDeVuelo, id,tiempoDeVuelo);
 	  
-System.out.println();
-		
-//VALIDACION
 	  assertTrue(rutaModificada);
 
 }

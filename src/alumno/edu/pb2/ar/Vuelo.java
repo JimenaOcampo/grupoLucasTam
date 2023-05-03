@@ -6,9 +6,11 @@ import java.util.ArrayList;
 public class Vuelo {
 	private Integer numeroDeVuelo;
 	private LocalDate fechaDeVuelo;
+
 	//tengo que crear una lista de rutas
 	private ArrayList<Ruta> listaRutas;
 	
+
 	public Vuelo(Ruta nuevaRuta, Integer numeroDeVuelo, LocalDate fechaDelVuelo) {
 		this.numeroDeVuelo=numeroDeVuelo;
 		this.fechaDeVuelo=fechaDelVuelo;
@@ -17,10 +19,10 @@ public class Vuelo {
 	}
 	
 	
-public Vuelo() {
+
 
 	
-	}
+	
 
 
 	//	--------------------------------------
@@ -47,9 +49,7 @@ public Vuelo() {
 		}
 		return respuesta;
  }
-	
- //---------------------------------------------  
-    
+
     
     
     
@@ -97,13 +97,6 @@ public  Boolean modificarTiempoDeVueloDeMiRuta(Double nuevoTiempoDeVuelo,Integer
 		this.fechaDeVuelo = fechaDeVuelo;
 	}
 
-
-
-
-
-
-	
-	
 
 
 
